@@ -9,10 +9,9 @@ CREATE TABLE IF NOT EXISTS `users` (
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `role` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `username` (`username`),
-  UNIQUE KEY `email` (`email`)
+    PRIMARY KEY (`id`),
+     UNIQUE KEY `username` (`username`),
+    UNIQUE KEY `email` (`email`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 
@@ -23,3 +22,5 @@ CREATE TABLE IF NOT EXISTS 'philosophy'
      quotes varchar(255) NOT NULL,
      description varchar(255) NOT NULL,
         PRIMARY KEY (`id`),
+
+ 
