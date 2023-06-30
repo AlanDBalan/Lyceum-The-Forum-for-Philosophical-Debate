@@ -7,27 +7,27 @@
     {
         "name": "Charlie",
         "email": "charlie@gmail.com",
-        "password": "password"
+        "password": "password123"
     },
     {
         "name": "John",
         "email": "john@gmail.com",
-        "password": "john123"
+        "password": "john12312321"
     },
     {
         "name": "Emily",
         "email": "emily@gmail.com",
-        "password": "emily456"
+        "password": "emily4561232"
     },
     {
         "name": "Michael",
         "email": "michael@gmail.com",
-        "password": "michael789"
+        "password": "michael789123"
     },
     {
         "name": "Sophia",
         "email": "sophia@gmail.com",
-        "password": "sophia321"
+        "password": "sophia32111"
     },
     {
         "name": "Daniel",
@@ -37,7 +37,7 @@
     {
         "name": "Olivia",
         "email": "olivia@gmail.com",
-        "password": "olivia654"
+        "password": "olivia65456"
     },
     {
         "name": "William",
@@ -47,11 +47,11 @@
     {
         "name": "Ava",
         "email": "ava@gmail.com",
-        "password": "ava789"
+        "password": "ava789101112"
     },
     {
         "name": "David",
         "email": "david@gmail.com",
-        "password": "david456"
+        "password": "david456789"
     }
 ]
