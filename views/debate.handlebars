@@ -1,4 +1,66 @@
 Debate
 {{#each projects}}
 {{this.name}}
+
+
+ <div class="text-center">
+    <h2>{{name}}</h2>
+    {{!-- <p>{{{get_emoji}}}</p> --}}
+    <p>{{description}}</p>
+    <p>Created by {{user.name}} on {{format_date date_created}}</p>
+    {{!-- <p>
+      <span for="img" aria-label="money">💲</span>
+      <span class="dollar-amount">{{format_amount needed_funding}}</span>
+      needed
+    </p> --}}
+    <p>
+      <button id="likeButton" class="btn btn-primary">Like this Post</button>
+      <button id="dislikeButton" class="btn btn-danger">Dislike this Post</button>
+    </p>
+    <p>
+      <span id="likeCount">0</span> people liked this post.
+      <span id="dislikeCount">0</span> people disliked this post.
+    </p>
+  </div>
+  
+  <!-- JavaScript code -->
+  <script>
+    // Initialize the like and dislike counts
+    let likeCount = 0;
+    let dislikeCount = 0;
+    let isLiked = false;
+    let isDisliked = false;
+
+    // Add an event listener to the like button
+    document.getElementById('likeButton').addEventListener('click', function() {
+      if (!isLiked) {
+        likeCount++;
+        isLiked = true;
+      } else {
+        likeCount--;
+        isLiked = false;
+      }
+
+      document.getElementById('likeCount').textContent = likeCount;
+      document.getElementById('likeButton').classList.toggle('active');
+      document.getElementById('dislikeButton').classList.remove('active');
+      isDisliked = false;
+    });
+
+    // Add an event listener to the dislike button
+    document.getElementById('dislikeButton').addEventListener('click', function() {
+      if (!isDisliked) {
+        dislikeCount++;
+        isDisliked = true;
+      } else {
+        dislikeCount--;
+        isDisliked = false;
+      }
+
+      document.getElementById('dislikeCount').textContent = dislikeCount;
+      document.getElementById('dislikeButton').classList.toggle('active');
+      document.getElementById('likeButton').classList.remove('active');
+      isLiked = false;
+    });
+  </script>
 {{/each}}
