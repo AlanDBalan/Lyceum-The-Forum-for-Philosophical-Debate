@@ -1,4 +1,4 @@
-<head>
+{{!-- <head>
   <meta charset="UTF-8">
   <title>Potluck Party</title>
   <link rel="stylesheet" href="/css/jass.css">
@@ -18,4 +18,43 @@
   </div>
   </body>
 
+</html> --}}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Potluck Party</title>
+  <link rel="stylesheet" href="/css/jass.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="flex-column justify-space-around">
+    <header class="display-flex justify-space-between align-center p-2">
+      <h1>
+        &#127881 Lyceum &#127881
+      </h1>
+      <button id="logoutButton" class="btn btn-primary">Logout</button>
+    </header>
+    <main class="container container-fluid mt-5">
+      {{{ body }}}
+    </main>
+  </div>
+
+  <!-- JavaScript code -->
+  <script>
+    // Add an event listener to the logout button
+    document.getElementById('logoutButton').addEventListener('click', function() {
+      // Perform logout functionality
+      // Replace this with your actual logout code or redirect logic
+      localStorage.removeItem('accessToken');
+      sessionStorage.removeItem('userSession');
+
+      window.location.href = '/';
+
+      alert('You are Logged out!!');
+    });
+  </script>
+</body>
 </html>
