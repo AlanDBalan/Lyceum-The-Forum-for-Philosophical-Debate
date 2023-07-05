@@ -40,7 +40,7 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a id="DebateButton" class="nav-link active" aria-current="page" href="#">Debate</a>
-          <a class="nav-link" href="#library">Library</a>
+          <a id="ProfileButton" class="nav-link" href="#library">Profile</a>
           <a class="nav-link" href="#debate">Debate</a>
           <a class="nav-link " href="#about">About</a>
         </div>
@@ -73,6 +73,12 @@
       const button = document.getElementById('DebateButton');
       button.addEventListener('click', function() {
        window.location.href = '/debate';
+  });
+});
+      document.addEventListener('DOMContentLoaded', function() {
+      const button = document.getElementById('ProfileButton');
+      button.addEventListener('click', function() {
+       window.location.href = '/profile';
   });
 });
 </script>
