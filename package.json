@@ -5,8 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "seed": "node seeds/seed.js"
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
@@ -21,7 +20,6 @@
     "mysql2": "^2.2.5",
     "nodemailer": "^6.9.3",
     "nodemailer-mailgun-transport": "^2.1.5",
-    "nodemailer-smtp-transport": "^2.7.4",
     "sequelize": "^6.3.5"
   }
 }
