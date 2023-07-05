@@ -23,4 +23,3 @@ CREATE TABLE IF NOT EXISTS 'philosophy'
      description varchar(255) NOT NULL,
         PRIMARY KEY (`id`),
 
- 
