@@ -20,6 +20,56 @@
   </style>
 </head>
 <body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Lyceum</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+
+                    <a class="nav-link" href="#library">Library</a>
+
+                    <div class="dropdown">
+                        <button class="btn btn-secondary " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Library
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Existentialism</a></li>
+                          <li><a class="dropdown-item" href="#">Stoicism</a></li>
+                          <li><a class="dropdown-item" href="#">Materialism</a></li>
+                        </ul>
+                      </div>
+
+                    <a class="nav-link" href="#debate">Debate</a>
+                    <a class="nav-link " href="#about">About</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container d-flex flex-row-reverse gap-">
+
+        <div class="card">
+            <div class="card-body">
+                This is some text within a card body.
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+            </div>
+        </div>
+
   <body style="background-color: lightblue;">
     <!-- Your page content goes here -->
   </body>
@@ -38,6 +88,7 @@
         <a class="nav-link" href="#debate">Debate</a>
         <a class="nav-link" href="#about">About</a>
       </div>
+
     </div>
   </div>
 </nav>
