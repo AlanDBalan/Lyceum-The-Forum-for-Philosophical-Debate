@@ -45,6 +45,7 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a id="DebateButton" class="nav-link active" aria-current="page" href="#">Debate</a>
+           {{#if logged_in}}
           <a id="ProfileButton" class="nav-link" href="#library">Profile</a>
           {{#if logged_in}}
 
@@ -52,6 +53,9 @@
           {{else}}
 
           {{/if}}
+           {{else}}
+       
+        {{/if}}
           {{!-- <a class="nav-link" href="#debate">Debate</a> --}}
           {{!-- <a class="nav-link " href="#about">About</a> --}}
         </div>
