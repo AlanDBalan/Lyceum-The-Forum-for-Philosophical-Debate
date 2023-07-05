@@ -1,66 +1,58 @@
-Debate
 {{#each projects}}
 {{this.name}}
 
+<div class="text-center">
+  <h2>{{name}}</h2>
+  <p>{{description}}</p>
+  <p>Created by {{user.name}} on {{format_date date_created}}</p>
+  <p>
+    <button id="likeButton-{{this.id}}" class="btn btn-primary">Like this Post</button>
+    <button id="dislikeButton-{{this.id}}" class="btn btn-danger">Dislike this Post</button>
+  </p>
+  <p>
+    <span id="likeCount-{{this.id}}">0</span> people liked this post.
+    <span id="dislikeCount-{{this.id}}">0</span> people disliked this post.
+  </p>
+</div>
 
- <div class="text-center">
-    <h2>{{name}}</h2>
-    {{!-- <p>{{{get_emoji}}}</p> --}}
-    <p>{{description}}</p>
-    <p>Created by {{user.name}} on {{format_date date_created}}</p>
-    {{!-- <p>
-      <span for="img" aria-label="money">💲</span>
-      <span class="dollar-amount">{{format_amount needed_funding}}</span>
-      needed
-    </p> --}}
-    <p>
-      <button id="likeButton" class="btn btn-primary">Like this Post</button>
-      <button id="dislikeButton" class="btn btn-danger">Dislike this Post</button>
-    </p>
-    <p>
-      <span id="likeCount">0</span> people liked this post.
-      <span id="dislikeCount">0</span> people disliked this post.
-    </p>
-  </div>
-  
-  <!-- JavaScript code -->
-  <script>
-    // Initialize the like and dislike counts
-    let likeCount = 0;
-    let dislikeCount = 0;
-    let isLiked = false;
-    let isDisliked = false;
+<!-- JavaScript code -->
+<script>
+  // Initialize the like and dislike counts for this project
+  let likeCount_{{this.id}} = 0;
+  let dislikeCount_{{this.id}} = 0;
+  let isLiked_{{this.id}} = false;
+  let isDisliked_{{this.id}} = false;
 
-    // Add an event listener to the like button
-    document.getElementById('likeButton').addEventListener('click', function() {
-      if (!isLiked) {
-        likeCount++;
-        isLiked = true;
-      } else {
-        likeCount--;
-        isLiked = false;
-      }
+  // Add an event listener to the like button
+  document.getElementById('likeButton-{{this.id}}').addEventListener('click', function() {
+    if (!isLiked_{{this.id}}) {
+      likeCount_{{this.id}}++;
+      isLiked_{{this.id}} = true;
+    } else {
+      likeCount_{{this.id}}--;
+      isLiked_{{this.id}} = false;
+    }
 
-      document.getElementById('likeCount').textContent = likeCount;
-      document.getElementById('likeButton').classList.toggle('active');
-      document.getElementById('dislikeButton').classList.remove('active');
-      isDisliked = false;
-    });
+    document.getElementById('likeCount-{{this.id}}').textContent = likeCount_{{this.id}};
+    document.getElementById('likeButton-{{this.id}}').classList.toggle('active');
+    document.getElementById('dislikeButton-{{this.id}}').classList.remove('active');
+    isDisliked_{{this.id}} = false;
+  });
 
-    // Add an event listener to the dislike button
-    document.getElementById('dislikeButton').addEventListener('click', function() {
-      if (!isDisliked) {
-        dislikeCount++;
-        isDisliked = true;
-      } else {
-        dislikeCount--;
-        isDisliked = false;
-      }
+  // Add an event listener to the dislike button
+  document.getElementById('dislikeButton-{{this.id}}').addEventListener('click', function() {
+    if (!isDisliked_{{this.id}}) {
+      dislikeCount_{{this.id}}++;
+      isDisliked_{{this.id}} = true;
+    } else {
+      dislikeCount_{{this.id}}--;
+      isDisliked_{{this.id}} = false;
+    }
 
-      document.getElementById('dislikeCount').textContent = dislikeCount;
-      document.getElementById('dislikeButton').classList.toggle('active');
-      document.getElementById('likeButton').classList.remove('active');
-      isLiked = false;
-    });
-  </script>
+    document.getElementById('dislikeCount-{{this.id}}').textContent = dislikeCount_{{this.id}};
+    document.getElementById('dislikeButton-{{this.id}}').classList.toggle('active');
+    document.getElementById('likeButton-{{this.id}}').classList.remove('active');
+    isLiked_{{this.id}} = false;
+  });
+</script>
 {{/each}}
