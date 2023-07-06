@@ -35,6 +35,12 @@ User.init(
       //   len: [8],
       // },
     },
+    
+    // confirmPassword: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    
+  // },
   },
   {
     hooks: {
