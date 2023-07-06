@@ -1,23 +1,33 @@
 {{#each projects}}
-{{this.name}}
+<div class="card mb-3">
+  <div class="card-body">
+    <h2 class="card-title">{{name}}</h2>
+    <p class="card-text">{{description}}</p>
+    <div class="card-text text-muted">Created by {{user.name}} on {{format_date date_created}}</div>
+    <div class="btn-group" role="group">
+      <button id="likeButton-{{this.id}}" class="btn btn-primary">Like this Post</button>
+      <button id="dislikeButton-{{this.id}}" class="btn btn-danger">Dislike this Post</button>
+    </div>
+    <div class="card-text">
+      <span id="likeCount-{{this.id}}">0</span> people liked this post.
+      <span id="dislikeCount-{{this.id}}">0</span> people disliked this post.
+    </div>
+  </div>
+</div>
 
-<div class="text-center">
-  <h2>{{name}}</h2>
-  <p>{{description}}</p>
-  <p>Created by {{user.name}} on {{format_date date_created}}</p>
-  <p>
-    <button id="likeButton-{{this.id}}" class="btn btn-primary">Like this Post</button>
-    <button id="dislikeButton-{{this.id}}" class="btn btn-danger">Dislike this Post</button>
-  </p>
-  <p>
-    <span id="likeCount-{{this.id}}">0</span> people liked this post.
-    <span id="dislikeCount-{{this.id}}">0</span> people disliked this post.
-  </p>
+<!-- Comment Section -->
+<div class="comment-section">
+  <h3>Comments</h3>
+  <form id="commentForm-{{this.id}}">
+    <input type="text" id="commentInput-{{this.id}}" placeholder="Write a comment...">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <ul id="commentList-{{this.id}}"></ul>
 </div>
 
 <!-- JavaScript code -->
 <script>
-  // Initialize the like and dislike counts for this project
+// Initialize the like and dislike counts for this project
   let likeCount_{{this.id}} = 0;
   let dislikeCount_{{this.id}} = 0;
   let isLiked_{{this.id}} = false;
@@ -53,6 +63,30 @@
     document.getElementById('dislikeButton-{{this.id}}').classList.toggle('active');
     document.getElementById('likeButton-{{this.id}}').classList.remove('active');
     isLiked_{{this.id}} = false;
+  });
+  // Function to create a new comment element
+  function createCommentElement(commentText) {
+    const newComment = document.createElement('li');
+    newComment.textContent = commentText;
+    return newComment;
+  }
+
+
+  // Add an event listener to the comment form
+  document.getElementById('commentForm-{{this.id}}').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Get the comment input value
+    const commentInput = document.getElementById('commentInput-{{this.id}}');
+    const commentText = commentInput.value;
+
+    // Create a new comment element
+    const commentList = document.getElementById('commentList-{{this.id}}');
+    const newComment = createCommentElement(commentText);
+    commentList.appendChild(newComment);
+
+    // Clear the comment input
+    commentInput.value = '';
   });
 </script>
 {{/each}}
