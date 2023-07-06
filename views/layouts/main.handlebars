@@ -34,7 +34,8 @@
   <link rel="stylesheet" href="/css/style.css">
   <style>
     body {
-      background-color: #ffffff; /* Radiant beige color */
+      background-color: #ffffff;
+      /* Radiant beige color */
     }
   </style>
 </head>
@@ -44,45 +45,35 @@
     <div class="container-fluid">
 
       <a id="HomeButton" class="navbar-brand" href="#">Lyceum</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-
-      <a class="navbar-brand" href="">Lyceum</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a id="DebateButton" class="nav-link active" aria-current="page" href="#">Debate</a>
-           {{#if logged_in}}
-          <a id="ProfileButton" class="nav-link" href="#library">Profile</a>
+        <a class="navbar-brand" href="">Lyceum</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 
-          {{#if logged_in}}
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a id="DebateButton" class="nav-link active" aria-current="page" href="#">Debate</a>
 
-          <button id="logout" class="btn btn-primary">Logout</button>
-          {{else}}
-          {{/if}}
+            {{#if logged_in}}
+            <a id="ProfileButton" class="nav-link" href="#library">Profile</a>
+            <button id="logout" class="btn btn-primary">Logout</button>
+            {{else}}
+            <button id="login" class="btn btn-primary">Login</button>
+            {{/if}}
 
-           {{else}}
-       
-        {{/if}}
+            {{!-- {{#if logged_out}}
+            <script src="/js/login.js"></script>
+            {{/if}} --}}
 
-        {{#if logged_out}}
-        <button id="login" class="btn btn-primary">Login</button>
-        {{else}}
+            {{!-- <a class="nav-link" href="#debate">Debate</a> --}}
+            {{!-- <a class="nav-link " href="#about">About</a> --}}
 
-        {{/if}}
-
-        {{!-- {{#if logged_out}}
-  <script src="/js/login.js"></script>
-  {{/if}} --}}
-
-          {{!-- <a class="nav-link" href="#debate">Debate</a> --}}
-          {{!-- <a class="nav-link " href="#about">About</a> --}}
-
+          </div>
         </div>
-      </div>
     </div>
   </nav>
   <div class="flex-column justify-space-around">
@@ -101,7 +92,7 @@
       {{{ body }}}
     </main>
   </div>
-   {{#if logged_out}}
+  {{#if logged_out}}
   <script src="/js/login.js"></script>
   {{/if}}
   {{#if logged_in}}
@@ -118,19 +109,29 @@
     document.addEventListener('DOMContentLoaded', function () {
       const button = document.getElementById('ProfileButton');
 
-      button.addEventListener('click', function() {
-       window.location.href = '/profile';
-  });
-});
-      document.addEventListener('DOMContentLoaded', function() {
+      button.addEventListener('click', function () {
+        window.location.href = '/profile';
+      });
+    });
+    document.addEventListener('DOMContentLoaded', function () {
       const button = document.getElementById('HomeButton');
-      button.addEventListener('click', function() {
-       window.location.href = '/';
-  });
-});
-</script>
+      button.addEventListener('click', function () {
+        window.location.href = '/';
+      });
+      const loginButton = document.getElementById('login');
+      if (loginButton) {
+        loginButton.addEventListener('click', function () {
+          // Perform login logic
+          // Redirect to login page or show login form
+          window.location.href = '/login';
+        });
+      }
+    });
 
-    
+
+  </script>
+
+
   </script>
 
 </body>
